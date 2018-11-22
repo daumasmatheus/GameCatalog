@@ -1,0 +1,18 @@
+﻿<h1>Games Catalog</h1>
+<hr />
+<div class="row">    
+    <div ng-repeat="g in games" class="border col catalog">
+        <h4>{{g.title}}</h4>
+        <p>Description: {{g.description}}</p>
+        <p>Released in {{g.releaseDate | date: 'dd/MM/yyyy'}}</p>
+        <p>Developed by {{g.developer.name}} - Published by {{g.publisher.name}}</p>
+        <hr />
+        <div>
+            <a href="" ng-click="removeGame(g.id)" class="btn btn-outline-danger">Delete</a>
+            <a href="#/edit-game/{{g.id}}" class="btn btn-outline-warning">Edit</a>
+        </div>
+    </div>
+    <div ng-show="!games.length" class="alert alert-warning">
+        <p>The catalog is empty</p>
+    </div>
+</div>

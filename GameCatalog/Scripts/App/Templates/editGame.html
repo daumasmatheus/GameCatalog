@@ -1,0 +1,30 @@
+﻿<h1>Add new game</h1>
+<form name="frEditGame" ng-submit="editGame(game)">
+
+    <div class="form-group">
+        <label>Game Title</label>
+        <input type="text" class="form-control" ng-model="game.title" name="title">
+    </div>
+
+    <div class="form-group">
+        <label>Description</label>
+        <input type="text" class="form-control" ng-model="game.description" name="description">
+    </div>
+
+    <div class="form-group">
+        <label>Release Date</label>
+        <input type="date" class="form-control" ng-model="game.releaseDate" name="releaseDate">
+    </div>
+
+    <div class="form-group">
+        <label>Developer</label>
+        <select ng-model="game.developerId" ng-options="dev.id as dev.name for dev in devs track by dev.id"></select>      
+    </div>
+
+    <div class="form-group">
+        <label>Publishers</label>
+        <select ng-model="game.publisherId" ng-options="pub.id as pub.name for pub in publishers track by pub.id" ></select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
